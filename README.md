@@ -17,7 +17,7 @@
 
 <br/><br/>
 
-<img src="public/logo.png" alt="Hami Parsa Logo" width="120"/>
+<img src="logo.png" alt="Hami Parsa Logo" width="120"/>
 
 </div>
 
