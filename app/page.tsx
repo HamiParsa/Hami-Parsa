@@ -795,6 +795,10 @@ export default function Home() {
           color: #fff;
         }
 
+        .brand-text-desktop {
+          display: block;
+        }
+
         .hero-section {
           position: relative;
           display: flex;
@@ -2938,6 +2942,9 @@ export default function Home() {
           .mobile-toggle {
             display: flex;
           }
+          .brand-text-desktop {
+            display: none;
+          }
           .hero-section {
             min-height: auto;
             padding-top: 135px;
@@ -3326,7 +3333,7 @@ export default function Home() {
                   }}
                 />
               </span>
-              <span style={{ display: "none" }} className="brand-text-desktop">
+              <span className="brand-text-desktop">
                 <span
                   style={{
                     display: "block",
