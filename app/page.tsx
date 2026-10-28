@@ -133,6 +133,7 @@ const milestones = [
 ];
 
 type IconProps = {
+  size?: number;
   className?: string;
 };
 
@@ -148,12 +149,14 @@ type FormData = {
   message: string;
 };
 
-function ArrowIcon({ className = "h-4 w-4" }: IconProps) {
+function ArrowIcon({ size = 16, className = "" }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
+      width={size}
+      height={size}
       className={className}
     >
       <path
@@ -167,12 +170,14 @@ function ArrowIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
-function SendIcon({ className = "h-4 w-4" }: IconProps) {
+function SendIcon({ size = 16, className = "" }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
+      width={size}
+      height={size}
       className={className}
     >
       <path
@@ -191,12 +196,14 @@ function SendIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
-function CheckIcon({ className = "h-6 w-6" }: IconProps) {
+function CheckIcon({ size = 24, className = "" }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
+      width={size}
+      height={size}
       className={className}
     >
       <path
@@ -3358,7 +3365,7 @@ export default function Home() {
 
           <a href="#contact" className="header-cta">
             ارتباط با من
-            <ArrowIcon className="h-3.5 w-3.5" />
+            <ArrowIcon size={14} />
           </a>
 
           <button
@@ -3371,7 +3378,8 @@ export default function Home() {
             <svg
               viewBox="0 0 24 24"
               fill="none"
-              style={{ width: 20, height: 20 }}
+              width={20}
+              height={20}
             >
               {menuOpen ? (
                 <path
@@ -3471,11 +3479,11 @@ export default function Home() {
             <div className="hero-actions">
               <a href="#projects" className="button-primary">
                 کاوش در فضای من
-                <ArrowIcon className="h-4 w-4" />
+                <ArrowIcon size={16} />
               </a>
               <a href="#contact" className="button-secondary">
                 شروع یک گفت‌وگو
-                <SendIcon className="h-4 w-4" />
+                <SendIcon size={16} />
               </a>
             </div>
 
@@ -3642,7 +3650,7 @@ export default function Home() {
                   <div className="expertise-card-top">
                     <span className="expertise-number">{item.id}</span>
                     <span className="expertise-symbol">
-                      <ArrowIcon className="h-4 w-4" />
+                      <ArrowIcon size={16} />
                     </span>
                   </div>
                   <div className="expertise-eyebrow">{item.eyebrow}</div>
@@ -3900,7 +3908,7 @@ export default function Home() {
                   <div style={{ marginTop: 28 }}>
                     <a href="#contact" className="button-secondary">
                       پیشنهاد همکاری
-                      <ArrowIcon className="h-4 w-4" />
+                      <ArrowIcon size={16} />
                     </a>
                   </div>
                 </div>
@@ -4009,7 +4017,7 @@ export default function Home() {
                     <p>فرم رو کامل کن تا پیامت رو دریافت کنم.</p>
                   </div>
                   <div className="contact-send-icon">
-                    <SendIcon className="h-5 w-5" />
+                    <SendIcon size={20} />
                   </div>
                 </div>
 
@@ -4076,9 +4084,9 @@ export default function Home() {
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
+                          width={16}
+                          height={16}
                           style={{
-                            width: 16,
-                            height: 16,
                             animation: "slow-spin 1s linear infinite",
                           }}
                           aria-hidden="true"
@@ -4103,7 +4111,7 @@ export default function Home() {
                     ) : (
                       <>
                         ارسال پیام
-                        <SendIcon className="h-4 w-4" />
+                        <SendIcon size={16} />
                       </>
                     )}
                   </button>
@@ -4173,7 +4181,8 @@ export default function Home() {
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                style={{ width: 16, height: 16 }}
+                width={16}
+                height={16}
               >
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
               </svg>
@@ -4187,7 +4196,8 @@ export default function Home() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                style={{ width: 16, height: 16 }}
+                width={16}
+                height={16}
               >
                 <rect
                   x="3"
@@ -4238,7 +4248,8 @@ export default function Home() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                style={{ width: 16, height: 16 }}
+                width={16}
+                height={16}
               >
                 <path
                   d="m6 6 12 12M18 6 6 18"
@@ -4251,12 +4262,13 @@ export default function Home() {
 
             <div className="modal-icon">
               {modalStatus === "success" ? (
-                <CheckIcon className="h-8 w-8" />
+                <CheckIcon size={32} />
               ) : (
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  style={{ width: 32, height: 32 }}
+                  width={32}
+                  height={32}
                   aria-hidden="true"
                 >
                   <path
