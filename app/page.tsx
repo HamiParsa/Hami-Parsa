@@ -158,7 +158,7 @@ function ArrowIcon({ size = 16, className = "" }: IconProps) {
       width={size}
       height={size}
       className={className}
-      style={{ display: "inline-block", verticalAlign: "middle", flexShrink: 0 }}
+      style={{ display: "inline-block", verticalAlign: "middle" }}
     >
       <path
         d="M7 17 17 7M7 7h10v10"
@@ -180,7 +180,7 @@ function SendIcon({ size = 16, className = "" }: IconProps) {
       width={size}
       height={size}
       className={className}
-      style={{ display: "inline-block", verticalAlign: "middle", flexShrink: 0 }}
+      style={{ display: "inline-block", verticalAlign: "middle" }}
     >
       <path
         d="m22 2-7 20-4-9-9-4 20-7Z"
@@ -207,7 +207,7 @@ function CheckIcon({ size = 24, className = "" }: IconProps) {
       width={size}
       height={size}
       className={className}
-      style={{ display: "inline-block", verticalAlign: "middle", flexShrink: 0 }}
+      style={{ display: "inline-block", verticalAlign: "middle" }}
     >
       <path
         d="m5 12 4.5 4.5L19 7"
@@ -3301,86 +3301,58 @@ export default function Home() {
 
       <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
         <nav className="header-inner" aria-label="منوی اصلی">
-          {/* برند و لوگو */}
           <a
             href="#home"
             className="brand-link"
             onClick={closeMenu}
             aria-label="Hami Parsa - خانه"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              textDecoration: "none",
-              color: "inherit",
-            }}
           >
-            <span
-              className="brand-mark"
-              style={{
-                position: "relative",
-                display: "grid",
-                width: 42,
-                height: 42,
-                placeItems: "center",
-                border: "1px solid rgba(220, 20, 60, 0.32)",
-                borderRadius: 10,
-                background:
-                  "linear-gradient(145deg, rgba(220, 20, 60, 0.15), rgba(74, 6, 18, 0.08))",
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                width={1000}
-                height={1000}
-                src="https://yourimageshare.com/cdn-cgi/image/width=1280,fit=scale-down,quality=85,format=auto,onerror=redirect/https://i.yourimageshare.com/K3Bqsm9a8f.png"
-                alt="Hami Parsa"
-                style={{
-                  width: 28,
-                  height: 28,
-                  objectFit: "contain",
-                  background: "#fff",
-                  borderRadius: 8,
-                }}
-                onError={(e) => {
-                  console.error("Image failed to load:", e.currentTarget.src);
-                }}
-              />
-            </span>
-            <span style={{ display: "none" }} className="brand-text-desktop">
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 800,
-                  letterSpacing: "0.05em",
-                }}
-              >
-                HAMI PARSA
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <span className="brand-mark">
+                <Image
+                  width={1000}
+                  height={1000}
+                  src="https://yourimageshare.com/cdn-cgi/image/width=1280,fit=scale-down,quality=85,format=auto,onerror=redirect/https://i.yourimageshare.com/K3Bqsm9a8f.png"
+                  alt="Hami Parsa"
+                  style={{
+                    width: 28,
+                    height: 28,
+                    objectFit: "contain",
+                    background: "#fff",
+                    borderRadius: 8,
+                  }}
+                  onError={(e) => {
+                    console.error("Image failed to load:", e.currentTarget.src);
+                  }}
+                />
               </span>
-              <span
-                style={{
-                  marginTop: 4,
-                  display: "block",
-                  fontSize: 8,
-                  letterSpacing: "0.2em",
-                  color: "rgba(250,245,243,0.35)",
-                }}
-              >
-                FULL-STACK DEVELOPER
+              <span style={{ display: "none" }} className="brand-text-desktop">
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: 12,
+                    fontWeight: 800,
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  HAMI PARSA
+                </span>
+                <span
+                  style={{
+                    marginTop: 4,
+                    display: "block",
+                    fontSize: 8,
+                    letterSpacing: "0.2em",
+                    color: "rgba(250,245,243,0.35)",
+                  }}
+                >
+                  FULL-STACK DEVELOPER
+                </span>
               </span>
-            </span>
+            </div>
           </a>
 
-          {/* لینک‌های ناوبری دسکتاپ */}
-          <div
-            className="nav-links"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "clamp(12px, 1.5vw, 23px)",
-            }}
-          >
+          <div className="nav-links">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -3388,71 +3360,23 @@ export default function Home() {
                 className={`nav-link ${
                   activeSection === item.href.slice(1) ? "is-active" : ""
                 }`}
-                style={{
-                  position: "relative",
-                  paddingBlock: 10,
-                  color:
-                    activeSection === item.href.slice(1)
-                      ? "#fff"
-                      : "rgba(238, 240, 243, 0.55)",
-                  fontSize: 11,
-                  whiteSpace: "nowrap",
-                  textDecoration: "none",
-                  transition: "color 200ms ease",
-                }}
               >
                 {item.label}
               </a>
             ))}
           </div>
 
-          {/* دکمه CTA هدر */}
-          <a
-            href="#contact"
-            className="header-cta"
-            style={{
-              position: "relative",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 9,
-              padding: "11px 16px",
-              overflow: "hidden",
-              border: "1px solid rgba(220, 20, 60, 0.35)",
-              borderRadius: 10,
-              background:
-                "linear-gradient(145deg, rgba(220, 20, 60, 0.16), rgba(74, 6, 18, 0.08))",
-              color: "rgba(238, 240, 243, 0.95)",
-              fontSize: 11,
-              fontWeight: 600,
-              whiteSpace: "nowrap",
-              textDecoration: "none",
-              boxShadow:
-                "0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
-            }}
-          >
+          <a href="#contact" className="header-cta">
             ارتباط با من
             <ArrowIcon size={14} />
           </a>
 
-          {/* دکمه منوی موبایل */}
           <button
             type="button"
             className="mobile-toggle"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? "بستن منو" : "باز کردن منو"}
             aria-expanded={menuOpen}
-            style={{
-              display: "none", // در دسکتاپ مخفی است، در موبایل با CSS نمایش داده می‌شود
-              width: 42,
-              height: 42,
-              alignItems: "center",
-              justifyContent: "center",
-              border: "1px solid rgba(238, 240, 243, 0.1)",
-              borderRadius: 10,
-              background: "rgba(238, 240, 243, 0.03)",
-              color: "#eef0f3",
-              cursor: "pointer",
-            }}
           >
             <svg viewBox="0 0 24 24" fill="none" width={20} height={20}>
               {menuOpen ? (
