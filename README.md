@@ -65,7 +65,7 @@ The project focuses on clean implementation, thoughtful UI/UX, visual storytelli
 
 <div align="center">
 
-<img src="iamge1.png" alt="Hami Parsa Portfolio Homepage" width="100%"/>
+<img src="image1.png" alt="Hami Parsa Portfolio Homepage" width="100%"/>
 
 
 </div>
